@@ -82,16 +82,24 @@ Os resultados são apresentados em dois cartões:
 ## Estrutura do Projeto
 
 ```
-front_end/
-├── assets/
-│   └── hp_logo_branco.png
-├── lib/
-│   ├── main.dart                # Ponto de entrada do app
-│   ├── pages/
-│   │   └── validador_page.dart  # Tela principal
-│   └── widgets/                 # Componentes reutilizáveis (cards, botões)
-├── pubspec.yaml
-└── README.md
+lib/
+├── core/
+│   └── routes/
+│       └── app_router.dart
+├── features/
+│   └── product_validation/
+│       ├── data/
+│       │   ├── datasources/
+│       │   ├── models/
+│       │   └── repositories/
+│       ├── domain/
+│       │   ├── entities/
+│       │   ├── repositories/
+│       │   └── usecases/
+│       └── presentation/
+│           └── pages/
+│               └── validator_page.dart
+└── main.dart
 ```
 
 ---
