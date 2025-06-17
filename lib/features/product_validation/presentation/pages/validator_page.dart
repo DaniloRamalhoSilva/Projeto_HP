@@ -196,13 +196,13 @@ class _ValidatorPageState extends State<ValidatorPage> {
                     PieChartData(
                       sections: [
                         PieChartSectionData(
-                          value: _analysis!.porcentagemFalso,
+                          value: _analysis!.porcentagemOriginal,
                           color: const Color(0xFF0072CE),
                           radius: 20,
                           showTitle: false,
                         ),
                         PieChartSectionData(
-                          value: 100 - _analysis!.porcentagemFalso,
+                          value: 100 - _analysis!.porcentagemOriginal,
                           color: Colors.grey[300]!,
                           radius: 20,
                           showTitle: false,
@@ -213,7 +213,7 @@ class _ValidatorPageState extends State<ValidatorPage> {
                     ),
                   ),
                   Text(
-                    '${_analysis!.porcentagemFalso.toStringAsFixed(0)}%',
+                    '${_analysis!.porcentagemOriginal.toStringAsFixed(0)}%',
                     style: const TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,

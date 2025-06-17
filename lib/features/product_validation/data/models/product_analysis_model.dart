@@ -2,7 +2,7 @@ import '../../domain/entities/product_analysis.dart';
 
 class ProductAnalysisModel extends ProductAnalysis {
   const ProductAnalysisModel({
-    required double porcentagemFalso,
+    required double porcentagemOriginal,
     required String explicacao,
     String? titulo,
     String? marca,
@@ -12,7 +12,7 @@ class ProductAnalysisModel extends ProductAnalysis {
     String? qualidadeDescricao,
     String? qualidadeComentarios,
   }) : super(
-          porcentagemFalso: porcentagemFalso,
+          porcentagemOriginal: porcentagemOriginal,
           explicacao: explicacao,
           titulo: titulo,
           marca: marca,
@@ -25,7 +25,7 @@ class ProductAnalysisModel extends ProductAnalysis {
 
   factory ProductAnalysisModel.fromJson(Map<String, dynamic> json) {
     return ProductAnalysisModel(
-      porcentagemFalso: (json['percentagem'] as num?)?.toDouble() ?? 0,
+      porcentagemOriginal: (json['percentagem'] as num?)?.toDouble() ?? 0,
       explicacao: json['justificativa'] ?? '',
       titulo: json['titulo'],
       marca: json['marca'],

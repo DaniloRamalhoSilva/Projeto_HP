@@ -1,5 +1,5 @@
 class ProductAnalysis {
-  final double porcentagemFalso;
+  final double porcentagemOriginal;
   final String explicacao;
   final String? titulo;
   final String? marca;
@@ -10,7 +10,7 @@ class ProductAnalysis {
   final String? qualidadeComentarios;
 
   const ProductAnalysis({
-    required this.porcentagemFalso,
+    required this.porcentagemOriginal,
     required this.explicacao,
     this.titulo,
     this.marca,

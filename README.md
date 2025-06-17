@@ -1,85 +1,96 @@
+# Validador de Produtos HP 🕵️‍♂️📦
 
-# Validador de Produto HP
-
-Um aplicativo Flutter desenvolvido para a Hewlett-Packard (HP) que recebe um link do Mercado Livre, envia para uma API de análise e exibe os resultados em um gráfico, indicando a porcentagem de chance do produto ser falso e uma explicação detalhada.
-
----
-
-## Índice
-
-- [Visão Geral](#vis%C3%A3o-geral)  
-- [Recursos](#recursos)  
-- [Pré-requisitos](#pr%C3%A9-requisitos)  
-- [Instalação](#instala%C3%A7%C3%A3o)  
-- [Configuração de Ativos](#configura%C3%A7%C3%A3o-de-ativos)  
-- [Estrutura do Projeto](#estrutura-do-projeto)  
-- [Uso](#uso)  
-- [Licença](#licen%C3%A7a)  
+Aplicativo em Flutter desenvolvido para validar produtos HP anunciados no Mercado Livre. Basta fornecer o link do anúncio, e o app mostrará, de forma visual e intuitiva, a chance de o produto ser original ou falso com base em uma análise realizada por uma API especializada.
 
 ---
 
-## Visão Geral
+## 📚 Índice
 
-Este projeto tem como objetivo criar uma interface amigável e moderna, seguindo a identidade visual da HP, para validar produtos anunciados no Mercado Livre. Ao inserir um link de produto, o aplicativo faz uma chamada a uma API que retorna:
-
-- **`porcentagem_falso`**: número entre 0 e 100 que indica a chance do produto ser falso.  
-- **`explicacao`**: texto que descreve os critérios usados na análise.
-
-Os resultados são apresentados em dois cartões:
-
-1. **Entrada do Link**: campo de URL e botão de análise.  
-2. **Resultado da Análise**: gráfico de pizza mostrando a porcentagem e texto explicativo.
-
----
-
-## Recursos
-
-- Validação de URL do Mercado Livre antes de enviar para análise.  
-- Chamada HTTP para API de análise.  
-- Gráfico de pizza personalizado com animação usando **fl_chart**.  
-- Layout modular em cartões, seguindo cores e tipografia HP.  
+- [Visão Geral](#visão-geral)
+- [Recursos Principais](#recursos-principais)
+- [Tecnologias](#tecnologias)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Configuração de Ativos](#configuração-de-ativos)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Usar](#como-usar)
+- [Back-end](#back-end)
+- [Autores](#autores)
+- [Licença](#licença)
 
 ---
 
-## Pré-requisitos
+## 📝 Visão Geral
 
-- Flutter SDK **v3.10.0**  
-- Dart SDK **v3.10.0**  
-- Ambiente de desenvolvimento configurado (Android Studio, VS Code, Xcode, ou IDE de sua preferência)  
+Este aplicativo apresenta uma interface elegante e moderna, respeitando a identidade visual da HP. Ao inserir um link de produto do Mercado Livre, o app envia uma requisição HTTP à API, obtendo:
+
+- `` – Probabilidade do produto ser original (0% a 100%).
+- `` – Uma descrição detalhada sobre os critérios utilizados na análise.
+
+Os resultados são apresentados em três cartões:
+
+- 🔗 Entrada do Link
+- 📖 Dados do produto
+- 📊 Gráfico e Texto explicativo
+---
+
+## ✨ Recursos Principais
+
+- ✅ Validação automática de URL do Mercado Livre
+- 🌐 Integração direta com API via HTTP
+- 📈 Gráfico de pizza interativo com animações utilizando **fl\_chart**
+- 🎨 Design modular, com paleta de cores e tipografia inspiradas na identidade visual da HP
 
 ---
 
-## Instalação
+## ⚙️ Tecnologias
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/projeto_hp.git
-   cd projeto_hp
+- **Flutter 3.10**
+- **Dart 3.10**
+- Pacotes essenciais: `http`, `fl_chart`, entre outros no `pubspec.yaml`.
+
+---
+
+## 📋 Pré-requisitos
+
+- Flutter SDK 3.10
+- Dart SDK 3.10
+- IDE recomendado: Android Studio, VS Code ou Xcode
+
+---
+
+## 🛠️ Instalação
+
+Siga estes passos para rodar o projeto localmente:
+
+```bash
+git clone https://github.com/seu-usuario/projeto_hp.git
+cd projeto_hp
+flutter pub get
+flutter run
+```
+
+---
+
+## 📁 Configuração de Ativos
+
+1. Coloque a logo da HP no diretório:
+
    ```
-2. Baixe as dependências:
-   ```bash
-   flutter pub get
+   assets/hp_logo_branco.png
    ```
-3. Execute o aplicativo:
-   ```bash
-   flutter run
+
+2. Configure o arquivo `pubspec.yaml`:
+
+   ```yaml
+   flutter:
+     assets:
+       - assets/hp_logo_branco.png
    ```
 
 ---
 
-## Configuração de Ativos
-
-- Inclua a logo da HP em `assets/hp_logo_branco.png`.  
-- No `pubspec.yaml`, adicione:
-  ```yaml
-  flutter:
-    assets:
-      - assets/hp_logo_branco.png
-  ```
-
----
-
-## Estrutura do Projeto
+## 💻 Estrutura do Projeto
 
 ```
 lib/
@@ -104,14 +115,32 @@ lib/
 
 ---
 
-## Uso
+## 🚦 Como Usar
 
-1. Cole o link do Mercado Livre.  
-2. Clique em **Analisar Produto**.  
-3. Veja a porcentagem no centro do gráfico e leia a explicação abaixo.  
+1. Insira o link do produto do Mercado Livre.
+2. Toque no botão **"Analisar Produto"**.
+3. Visualize o resultado no gráfico animado e leia a explicação detalhada.
 
 ---
 
-## Licença
+## 🔗 Back-end
 
-Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+O serviço que realiza a análise está disponível neste repositório: [Estrutura\_Dados\_Com\_LLM](https://github.com/DaniloRamalhoSilva/Estrutura_Dados_Com_LLM).
+
+---
+
+## 👨‍🏫 Autores
+
+- Danilo Ramalho Silva | RM: 555183
+- Israel Dalcin Alves Diniz | RM: 554668
+- João Vitor Pires da Silva | RM: 556213
+- Matheus Hungaro | RM: 555677
+- Pablo Menezes Barreto | RM: 556389
+- Tiago Toshio Kumagai Gibo | RM: 556984
+
+---
+
+## 📜 Licença
+
+Projeto licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para mais detalhes.
+
