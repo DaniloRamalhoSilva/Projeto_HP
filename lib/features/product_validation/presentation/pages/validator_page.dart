@@ -16,11 +16,9 @@ class ValidatorPage extends StatefulWidget {
 }
 
 class _ValidatorPageState extends State<ValidatorPage> {
-  final TextEditingController _controller = TextEditingController(
-    text: 'https://www.mercadolivre.com.br/exemplo-produto1234',
-  );
+  final TextEditingController _controller = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  final RegExp _mlUrl = RegExp(r'^https?://(www\\.)?mercadolivre\\.com\\.br/.+');
+  final RegExp _mlUrl = RegExp(r'^https?://(?:[a-z0-9-]+\.)*mercadolivre\.com\.br/.+',caseSensitive: false,);
 
   ProductAnalysis? _analysis;
   late final AnalyzeProduct _analyzeUseCase;
@@ -47,7 +45,7 @@ class _ValidatorPageState extends State<ValidatorPage> {
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 16),
-                Text('Aguarde, estamos realizando a analise...'),
+                Text('Aguarde, estamos realizando a análise...'),
               ],
             ),
           ),
@@ -75,15 +73,16 @@ class _ValidatorPageState extends State<ValidatorPage> {
         backgroundColor: const Color(0xFF004F9F),
         title: Image.asset('assets/hp_logo_branco.png', height: 32),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.all(16),
           children: [
             _buildFormCard(),
             const SizedBox(height: 20),
             if (_analysis != null && _analysis!.titulo != null)
               _buildProductCard(),
-            const SizedBox(height: 20),
+            if (_analysis != null && _analysis!.titulo != null)
+              const SizedBox(height: 20),
             if (_analysis != null) _buildResultCard(),
           ],
         ),
